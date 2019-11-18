@@ -2,7 +2,7 @@ const sha = require("sha256");
 
 class Block {
   constructor(data, prevHash) {
-    this.timestamp = Date.now();
+    this.timestamp = Math.floor(Date.now() / 1000);
     this.data = data;
     this.prevHash = prevHash;
     this.hash = this.getHash();
